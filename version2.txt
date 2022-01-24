@@ -1,1 +1,7 @@
 
+
+
+
+Mein Teil des Berichts:
+
+Der Code wurde mit Micropython2.0, was eine Distribution von Python ist und ein anderes Betriebssystem für den EV3 benötigt; dazu wurde das Modul pybricks genutzt. Einen großen    Teil der Entwicklungsarbeiten waren der Formatierung der Ausgabe und der Speicherung des Highscores in einer Textdatei gewidmet. Der Spielablauf ist sehr einfach: Nach einer Begrüßung und einem Menüaufruf, bei dem beispielsweise die Bestenliste aufgerufen werden kann, wird das Spiel, gestartet: Die drei Straßen bewegen sich. Sobald das Auto gegen ein Hindernis stößt, hat man verloren, kann sich aber noch in der Bestenliste verewigen. Die Durchschnittsgeschwindigkeit der Straßen steigt im Schnitt an. Ursprünglich sollte die Beschleunigung im Lauf der Zeit zunehmen, die aber die Verwendung von Threads benötigt hätte, die beim EV3 Probleme bereiteten. Nach Wunsch können weitere Sprachen integriert werden; Englisch und Deutsch sind bereits integriert. Ich war selber davon überrascht, wie viel Spaß das Spiel macht, obwohl die Software einfach gehalten wurde und ich sie ja kenne.
