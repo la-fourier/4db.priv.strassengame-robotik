@@ -23,6 +23,11 @@ ll=Motor(Port.A)
 mm=Motor(Port.B)
 rr=Motor(Port.C)
 auto=TouchSensor(Port.S1)
+voice=False
+voiceconfig={"language": "de", "voice": "f1", "speed": 120, "pitch": 50, "volume": 60}
+dat=open("DE.txt", "r")
+texte=dat.readlines()
+dat.close()
 
 
 # Definitions (2)
@@ -37,13 +42,41 @@ def showwait(texte=["", ""]):
         pass
     wait(500)
 def highscore():
+    dat=open("highscore.txt", "r")
+    dat.readlines()
     while not (Button.CENTER in ev3.buttons.pressed()):
         pass
     wait(500)
 def output():
+    emph=0
+    outs=["Deutsch Audio", "Deutsch Visuell", "Englisch Audio", "Englisch Visuell"]
     while not (Button.CENTER in ev3.buttons.pressed()):
-        pass
+        for i in range(0, len(outs)):
+        if emph==i:
+            ev3.screen.draw_text(x=30, y=5+23*i, text=args[i], text_color=Color.WHITE, background_color=Color.BLACK)
+        else:
+            ev3.screen.draw_text(x=30, y=5+23*i, text=args[i], text_color=Color.BLACK, background_color=Color.WHITE)
+        while not ((Button.UP in ev3.buttons.pressed()) or (Button.DOWN in ev3.buttons.pressed())):
+            pass
+        if (Button.DOWN in ev3.buttons.pressed()):
+            emph=(emph+1)%len(args)
+            wait(500)
+            ev3.screen.clear()
+            continue
+        elif (Button.UP in ev3.buttons.pressed()):
+            emph=(emph-1)%len(args)
+            wait(500)
+            ev3.screen.clear()
+            continue
     wait(500)
+    if 
+def highscore_():
+    wait(500)
+    # hier das zeugs machen
+def output_(text="default"):
+    if voice==True:
+        ev3.speaker.set_volume(voiceconfig["volume"])
+        ev3.speaker.say(voiceconfig["language"], voiceconfig["voice"], voiceconfig["speed"], voiceconfig["pitch"])
 
 
 # Begrüßung (3)

@@ -1,0 +1,42 @@
+1) Introduction
+
+    In Version 1 funktioniert das Menü noch nicht richtg. Das wird der Fix der Version 2 sein - von Version 1 gibt es drei verschiedene Programme, deren
+    Unterschied im Beschleunigungsvorgang der Straßen liegt. Hierbei werden gewollt KEINE Threads genutzt; zudem wird nicht beschleunigt, da hierfür
+    Threads unerlässlich sind. Allerdings wurde die Idee umgesetzt, dass mit wachsender Zeit das arithmetische Mittel der Geschwindigkeiten
+    größer wird und sich danach die Geschwindigkeiten richten. Es fand ein Test für Sprachausgabe statt.
+
+2) Straßen-Laufanalyse
+
+    Version 1.1:
+        Alle 5 Sekunden wird die Geschwindigkeit von l auf randint(1, int(d)), von m auf randint(d/2, 2*int(d)) und r auf 
+        (int(d)-(int(ges["l"])+int(ges["r"]))/3)*3 gesetzt.
+
+    Version 1.2:
+        Alle 5 Sekunden werden drei Geschwindigkeiten bestimmt, aus deren ersten beiden die Geschw. der linken Straße ist, die der Mittleren ist aus
+        allen, die der Rechten aus den letzten beiden.
+    
+    Version 1.3:
+        Alle randint(1, 5) wird die Geschwindigkeit der Straßen wie bei 1.2 verändert.
+
+3) Erreichte Ziele in Version 1 und deren Nachteile
+
+    Die Idee, dass bei wachsender Zeit, die das Quadrat des arithmetischen Mittels der Geschwindigkeit ist, das AM der Geschw. größer wird und
+    es wahrscheinlicher wird, dass sich die Straßen schneller "drehen". Allerdings kann noch eine Beschleunigung engebaut werden, was aber vielleicht
+    nicht notwendig ist, da in 1.3 schon eine gewisse Zufallskomonente durch die variierende Zeit vor der nächsten Tempoänderung eingebaut ist, was ja
+    für den Spieler einen ähnlichen Effekt wie eine Beschleunigung hat. Deshalb ist das Einbinden einer Beschleunigung stand jetzt nicht bis Version 4
+    vorgesehen,
+    auch, weil dies Arbeit mit mindestens drei Threads erfordert.
+
+4) Ziele für Version 2
+
+    -Menü (done, 28.12.21)
+    -Textformatierung
+    -womöglich native Srachausgabe per say()?
+    -Struktur soll besser werden (done, 28.12.21)
+
+5) Ziele für Version 3
+
+    -Betriebsmodi sollen sinnvoller benannt und ins Menü gebaut werden
+    -BM sollen in ein Programm kommen
+
+28.12.2021
